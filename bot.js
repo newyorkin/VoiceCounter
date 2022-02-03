@@ -8,7 +8,7 @@ let token = config.token;
 const SERVER = config.server;
 const VOICE_CHANNEL = config.voice_channels  //нужны чтобы посчитать там members
 const TEXT_CHANNEL = config.text_channel;    //нужен чтобы отправить туда инфу
-const PERIOD = 60000;                        //60000ms = опрос каналов раз в м инуту
+const PERIOD = 60000;                        //60000ms = опрос каналов раз в минуту
 const ALERT_HOUR = 23;
 const ALERT_MINUTE = 55;
 
