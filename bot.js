@@ -83,14 +83,19 @@ function read_max_from_file()
     return max;
 }
 
+/**
+ * Текущая дата в формате ГГГГ-ММ-ДД
+ * 
+ * @returns string
+ */
 function current_date()
 {
     let date_ob = new Date();
     let date = ("0" + date_ob.getDate()).slice(-2);
     let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
     let year = date_ob.getFullYear();
-    let filename = year + "-" + month + "-" + date;
-    return filename;
+    let current_date = year + "-" + month + "-" + date;
+    return current_date;
 }
 
 /**
