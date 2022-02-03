@@ -6,5 +6,7 @@ For start you need:
 2) Invite them on your server
 3) Fill config.json
 4) docker-compose up .
-...
+
+???
+
 5) PROFIT!
