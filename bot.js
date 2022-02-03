@@ -8,11 +8,9 @@ let token = config.token;
 const SERVER = config.server;
 const VOICE_CHANNEL = config.voice_channels  //нужны чтобы посчитать там members
 const TEXT_CHANNEL = config.text_channel;    //нужен чтобы отправить туда инфу
-
-
-let date_ob = new Date();
-let hours = date_ob.getHours();
-let minutes = date_ob.getMinutes();
+const PERIOD = 60000;                        //60000ms = опрос каналов раз в м инуту
+const ALERT_HOUR = 23;
+const ALERT_MINUTE = 55;
 
 robot.on("ready", function(){
     console.log(robot.user.username + " запустился!");
@@ -30,7 +28,7 @@ async function timemembercount() {
          online = online + get_online_members(element);
      });
 
-    console.log(online); //local debug
+    //console.log(online); //local debug
     write_to_file(online+"\n");  //todo: запись кол-ва котиков в БД sqllite в формате дата - время - кол-во котиков онлайн
     
     if ( time_to_say() )
@@ -106,7 +104,7 @@ function time_to_say()
     let hours = date_ob.getHours();
     let minutes = date_ob.getMinutes();
 
-    if (hours == "23" && minutes=="55")
+    if (hours == ALERT_HOUR && minutes==ALERT_MINUTE)
     {
         return true
     }
@@ -116,4 +114,4 @@ function time_to_say()
 
 
 //запускаем подсчёт
-var interval = setInterval(function () { timemembercount(); }, 60000  );
+var interval = setInterval(function () { timemembercount(); }, PERIOD);
