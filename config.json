@@ -1,0 +1,7 @@
+{
+    "token" : "###_DISCORD_API_TOKEN_###",
+    "prefix" : "!",
+    "server" : "###_DISCORD_SERVER(GUILD)_###",
+	"voice_channels": ["###_VOICE_CHANNELS_AS_ARRAY)_###"],
+    "text_channel": "###_TEXT_CHANNEL_###"
+}
