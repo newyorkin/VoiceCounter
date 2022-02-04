@@ -8,9 +8,9 @@ let token = config.token;
 const SERVER = config.server;
 const VOICE_CHANNEL = config.voice_channels  //нужны чтобы посчитать там members
 const TEXT_CHANNEL = config.text_channel;    //нужен чтобы отправить туда инфу
-const PERIOD = 60000;                        //60000ms = опрос каналов раз в минуту
+const PERIOD = 300000;                        //300000ms = опрос каналов раз в 5 минут, чтобы дискорд не ругался на слишком частые обращения
 const ALERT_HOUR = 23;
-const ALERT_MINUTE = 55;
+const ALERT_MINUTE = 54;
 
 robot.on("ready", function () {
     console.log(robot.user.username + " запустился!");
@@ -102,7 +102,7 @@ function time_to_say() {
     let hours = date_ob.getHours();
     let minutes = date_ob.getMinutes();
 
-    if (hours == ALERT_HOUR && minutes == ALERT_MINUTE) {
+    if (hours == ALERT_HOUR && (minutes >= ALERT_MINUTE && minutes <= ALERT_MINUTE+5)) { //если попали в интервал в 5 минут
         return true
     }
 
