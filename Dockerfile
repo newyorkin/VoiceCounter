@@ -1,4 +1,5 @@
 FROM node:lts-alpine
+ENV TZ="Europe/Moscow"
 ENV NODE_ENV=production
 WORKDIR /usr/src/app
 COPY ["package.json", "./"]
