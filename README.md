@@ -7,15 +7,17 @@ For start you need:
 3) Create && fill config.json
 
 config.json is something like:
+    
 {
-    "token": "###_DISCORD_API_TOKEN_###",
+    
+     "token": "###_DISCORD_API_TOKEN_###",
     "server": "###_DISCORD_SERVER(GUILD)_###",
     "voice_channels": [
-        "###_VOICE_CHANNELS_AS_ARRAY)_###"
-    ],
+    "###_VOICE_CHANNELS_AS_ARRAY_###"
+     ],
     "text_channel": "###_TEXT_CHANNEL_###"
 }
-
-5) docker-compose up .
-6) ???
-7) PROFIT!
+    
+4) docker-compose up .
+5) ???
+6) PROFIT!
