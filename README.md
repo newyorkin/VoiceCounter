@@ -5,6 +5,17 @@ For start you need:
 1) Create Discord Bot (https://discord.com/developers/applications)
 2) Invite him on your server
 3) Create && fill config.json
-4) docker-compose up .
-5) ???
-6) PROFIT!
+
+config.json is something like:
+{
+    "token": "###_DISCORD_API_TOKEN_###",
+    "server": "###_DISCORD_SERVER(GUILD)_###",
+    "voice_channels": [
+        "###_VOICE_CHANNELS_AS_ARRAY)_###"
+    ],
+    "text_channel": "###_TEXT_CHANNEL_###"
+}
+
+5) docker-compose up .
+6) ???
+7) PROFIT!
