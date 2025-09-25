@@ -1,36 +1,36 @@
-# VoiceCounter
-It's Discord bot for count max online in voice channels today.
+### VoiceCounter
 
-For start you need:
-1) Create Discord Bot (https://discord.com/developers/applications)
-2) Invite him on your server
-3) Create && fill config.json
+A Discord bot that tracks the peak online users in voice channels for the current day.
 
-config.json is something like:
-    
+## Quick Start
+
+1.  **Create a bot** on the [Discord Developer Portal](https://discord.com/developers/applications)
+2.  **Invite it to your server**
+3.  **Fill a `config.json`** file using the template below
+4.  **Run:** `docker-compose up -d`
+
+## Config (`config.json`)
+
+```json
 {
-    
-    "token": "###_DISCORD_API_TOKEN_###",
-    "server": "###_DISCORD_SERVER(GUILD)_ID###",
-    "voice_channels": [
-    "###_VOICE_CHANNELS_ID_AS_ARRAY_###"
-     ],
-    "text_channel": "###_TEXT_CHANNEL_ID###"
+    "token": "YOUR_BOT_TOKEN",
+    "server": "YOUR_SERVER_ID",
+    "voice_channels": ["VOICE_CHANNEL_ID_1","VOICE_CHANNEL_ID_2", ... ],
+    "text_channel": "TEXT_CHANNEL_ID"
 }
-    
-4) docker-compose up .
-5) ???
-6) PROFIT!
+```
 
+## How to get IDs
 
+*   **Token:** Discord Dev Portal → Your Application → Bot → Reset Token
+*   **Server ID:** Enable Developer Mode in Discord → Right-click server name → "Copy Server ID"
+*   **Channel IDs:** Right-click on the channel → "Copy ID"
+Tip: You can also copy Server and Channel IDs from the address bar in the Discord web app.
 
-"token": "###_DISCORD_API_TOKEN_###" - its https://discord.com/developers/applications/*YOUR_APPLICATION*/bot, then tab "Bot", button - "Reset token", if you forgot your token.
-"server": "###_DISCORD_SERVER(GUILD)_###" u can find it if open discord in browser and go to your server https://discord.com/channels/XXXXXXXXXXXXXXXXXXXX/YYYYYYYYYYYYYYY, XXXXXXXXXXXXXXXXXXXX is server_id
-"text_channel": last number in url YYYYYYYYYYYYYYY is channel id
-"voice_channels": is similar text channel, but u need open text chat to see YYYYYYYYYYYYYYY id 
+## Troubleshooting
 
-May need to recreate image with command "docker-compose up --build", if you put wrong token, then receive error lika
-"Error [TOKEN_INVALID]: An invalid token was provided."
-Then change token in config.json, but nothing change.
+Getting `TOKEN_INVALID`? Update the token in `config.json` and rebuild the container:
 
-
+```bash
+docker-compose up --build
+```
